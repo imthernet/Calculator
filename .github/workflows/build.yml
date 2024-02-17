@@ -1,4 +1,4 @@
-name: Build Calc Boot Application
+name: Build Calc Application
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         with:
           client_id: hy1xpw7dd
           api_key: MjU3OTNmZmItNzM3NS00ZGQxLTlhMDQtNjllZmRhNGQ2MTUy
-          project_name: "Mvn plants"
+          project_name: "Calculator"
           scan_mode: "baseline"
           api_url: "https://api.soos.io/api/"
           target_url: "https://www.example.com/"
