@@ -12,8 +12,8 @@ jobs:
       - name: Run SOOS DAST Analysis
         uses: soos-io/soos-dast-github-action@v2
         with:
-          client_id: hy1xpw7dd
-          api_key: MjU3OTNmZmItNzM3NS00ZGQxLTlhMDQtNjllZmRhNGQ2MTUy
+          client_id: ffqi908c9
+          api_key: NmEzMTFhYmItMzE3Ni00NmRmLThkZjQtYWFjNGI1YmJhMTkw
           project_name: "Calculator"
           scan_mode: "baseline"
           api_url: "https://api.soos.io/api/"
