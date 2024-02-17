@@ -2,7 +2,7 @@ name: Build Calc Application
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   soos_dast_analysis_example:
