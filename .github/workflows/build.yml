@@ -5,19 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  soos_dast_analysis_example:
-    name: SOOS DAST Analysis Example
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run SOOS DAST Analysis
-        uses: soos-io/soos-dast-github-action@v2
-        with:
-          client_id: ffqi908c9
-          api_key: NmEzMTFhYmItMzE3Ni00NmRmLThkZjQtYWFjNGI1YmJhMTkw
-          project_name: "Calculator"
-          scan_mode: "baseline"
-          api_url: "https://api.soos.io/api/"
-          target_url: "https://www.example.com/"
+
   build:
     runs-on: ubuntu-latest
 
@@ -44,6 +32,20 @@ jobs:
     - name: Test project with Maven
       run: |
         mvn test
+        
+  soos_dast_analysis_example:
+    name: SOOS DAST Analysis Example
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run SOOS DAST Analysis
+        uses: soos-io/soos-dast-github-action@v2
+        with:
+          client_id: ffqi908c9
+          api_key: NmEzMTFhYmItMzE3Ni00NmRmLThkZjQtYWFjNGI1YmJhMTkw
+          project_name: "Calculator"
+          scan_mode: "baseline"
+          api_url: "https://api.soos.io/api/"
+          target_url: "https://www.example.com/"
 
         
 
