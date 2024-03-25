@@ -34,10 +34,10 @@ jobs:
         mvn test
         
   soos_dast_analysis_example:
-    name: SOOS DAST Analysis Example
+    name: SOOS DAST Analysis example
     runs-on: ubuntu-latest
     steps:
-      - name: Run SOOS DAST Analysis
+      - name: Run SOOS DAST analysis
         uses: soos-io/soos-dast-github-action@v2
         with:
           client_id: ffqi908c9
@@ -48,18 +48,18 @@ jobs:
           target_url: "https://localhost:8080/"
           
   sast-analysis:
-    name: Simple SAST Analysis
+    name: Run SAST analysis
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Run simple SAST analysis
+      - name: simple SAST analysis
         run: |
           grep -r 'TODO\|FIXME\|XXX' .
           
   sca-analysis:
-    name: Simple SCA Analysis
+    name: Run SCA Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
