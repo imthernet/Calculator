@@ -6,6 +6,28 @@ on:
 
 jobs:
 
+  sast-analysis:
+    name: Run SAST analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: simple SAST analysis
+        run: |
+          grep -r 'TODO\|FIXME\|XXX' .
+          
+  sca-analysis:
+    name: Run SCA Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Find dependency files
+        run: |
+          find . -name 'pom.xml'
+
   build:
     runs-on: ubuntu-latest
 
@@ -47,24 +69,4 @@ jobs:
           api_url: "https://api.soos.io/api/"
           target_url: "http://127.0.0.1:8080/"
           
-  sast-analysis:
-    name: Run SAST analysis
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
-      - name: simple SAST analysis
-        run: |
-          grep -r 'TODO\|FIXME\|XXX' .
-          
-  sca-analysis:
-    name: Run SCA Analysis
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
-      - name: Find dependency files
-        run: |
-          find . -name 'pom.xml'
+
